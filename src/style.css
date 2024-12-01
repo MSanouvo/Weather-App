@@ -1,3 +1,42 @@
-body{
-    background-color: lavender;
+body {
+  background-color: rgb(210, 248, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+  align-items: center;
+  height: 800px;
+  border-radius: 20px;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.location{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.description{
+  font-size: 1rem;
+}
+
+.temp{
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.alert{
+  font-size: 1.5rem;
 }
