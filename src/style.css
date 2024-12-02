@@ -1,8 +1,37 @@
-body {
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  height: 100vh;
   background-color: rgb(210, 248, 255);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-position: center;
+}
+
+.day{
+  background-image: url('./images/clear-sky-pexels-elia-clerici-282848-912110.jpg');
+
+}
+
+.night{
+  background-image: url('./images/night-sky-pexels-francesco-ungaro-998641.jpg');
+  background-size: cover;
+}
+
+.cloudy{
+  background-image: url('./images/cloudy-pexels-pixabay-414659.jpg');
+  background-size: cover;
+}
+
+.rain{
+  background-image: url('./images/rain-pexels-jplenio-2259232.jpg');
 }
 
 #container{
@@ -14,6 +43,7 @@ body {
   align-items: center;
   height: 800px;
   border-radius: 20px;
+  background-color: rgb(182, 182, 182);
 }
 
 #content{
@@ -22,6 +52,30 @@ body {
   gap: 30px;
   align-items: center;
 }
+
+#toggle{
+  display: grid;
+  grid-template-columns: 25px 25px;
+}
+
+#toggle>span{
+  justify-self: center;
+  outline: 1px solid black;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#toggle>span:hover{
+  background-color: rgb(224, 224, 224);
+  font-weight: bold;
+}
+
+.toggled{
+  background-color: rgb(224, 224, 224);
+  font-weight: bold;
+}
+
 
 .location{
   font-size: 2rem;
@@ -39,4 +93,60 @@ body {
 
 .alert{
   font-size: 1.5rem;
+}
+
+.min-max-temp{
+  display: grid;
+  grid-template-columns: 120px 120px;
+  font-size: 1.3rem;
+}
+
+.max-temp,
+.min-temp{
+  justify-self: center;
+}
+
+/* Remove X from search bar */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+display: none; 
+}
+
+.week-container{
+  outline: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(15, 100px);
+  gap: 2px;
+  width: 500px;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.days{
+  /* outline: 1px solid red; */
+  display: grid;
+  grid-template-rows: 15px 30px 1fr;
+  gap: 10px;
+  justify-self: center;
+}
+
+.days-icon{
+  align-self: center;
+  justify-self: center;
+  height: 30px;
+  width: 30px;
+  /* outline: 1px solid blue; */
+}
+
+.days-min-max{
+  /* outline: 1px solid green; */
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
 }
