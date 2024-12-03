@@ -36,24 +36,49 @@ body{
 
 #container{
   border: 1px solid black;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 50px 30px 50px 1fr;
   gap: 20px;
-  width: 60%;
-  align-items: center;
+  width: max(40%, 600px);
+  justify-self: center;
   height: 800px;
   border-radius: 20px;
   background-color: rgb(182, 182, 182);
 }
+#container>h1,
+#toggle,
+#container>form{
+  justify-self: center;
+}
 
-#content{
+form{
+  width: 310px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 200px 100px;
+}
+
+.search-div{
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  gap: 3px;
+}
+
+.error{
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#content{
+  display: grid;
+  grid-template-rows: 50px 70px 30px 40px 100px;
+  gap: 20px;
+  justify-self: center;
 }
 
 #toggle{
+  align-self: center;
   display: grid;
   grid-template-columns: 25px 25px;
 }
@@ -76,14 +101,24 @@ body{
   font-weight: bold;
 }
 
+.location,
+.temp,
+.min-max-temp,
+.description,
+.alert,
+.week-container{
+  justify-self: center;
+}
 
 .location{
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
 .description{
   font-size: 1rem;
+  width: 500px;
+  text-align: center;
 }
 
 .temp{
@@ -93,6 +128,8 @@ body{
 
 .alert{
   font-size: 1.5rem;
+  width: 500px;
+  text-align: center;
 }
 
 .min-max-temp{
@@ -106,6 +143,21 @@ body{
   justify-self: center;
 }
 
+input{
+  border-radius: 10px;
+  border: none;
+  height: 25px;
+  padding: 5px;
+}
+
+button{
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  background-color: rgb(172, 248, 244);
+  padding: 0px 10px;
+}
 /* Remove X from search bar */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -114,15 +166,13 @@ input[type="search"]::-webkit-search-results-decoration {
 display: none; 
 }
 
-.week-container{
+.week-container,
+.hourly-container{
   outline: 1px solid black;
-  display: grid;
-  grid-template-columns: repeat(15, 100px);
-  gap: 2px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 5px;
   width: 500px;
-  overflow: scroll;
-  overflow-y: hidden;
-  overflow-x: hidden;
   padding: 10px;
   border-radius: 10px;
 }
@@ -146,7 +196,24 @@ display: none;
 .days-min-max{
   /* outline: 1px solid green; */
   display: flex;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
+}
 
+.hourly-container{
+  width: 500px;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  gap: 17px;
+  height: 80px;
+  align-items: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hours{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

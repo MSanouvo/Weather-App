@@ -13,8 +13,11 @@
               <span id="F">F</span>
               <span id="C">C</span>
             </div>
-            <form action="">
-              <input id="search" type="search" placeholder="Please Enter Location" />
+            <form onsubmit="return false;">
+              <div class="search-div">
+                <input id="search" type="search" placeholder="Please Enter Location" />
+                <span class="error"></span>
+              </div>
               <button type="button">submit</button>
             </form>
             <div id="content"></div>
