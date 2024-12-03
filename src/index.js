@@ -1,11 +1,9 @@
 import './style.css';
 import { getWeather } from './weather';
 
-
 export let setting = 'F';
 let currentLocation = 'Sacramento';
 renderContent();
-
 
 function renderContent() {
   getWeather(currentLocation);
@@ -32,8 +30,7 @@ function renderContent() {
   button.addEventListener('click', () => {
     // preventDefault()
     currentLocation = search.value;
-    let newLocation = getWeather(currentLocation);
-    console.log(newLocation);
+    getWeather(currentLocation);
   });
 }
 
